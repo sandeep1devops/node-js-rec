@@ -5,9 +5,10 @@ pipeline {
             args '-p 3000:3000'
         }
     }
-     environment {
-            CI = 'true'
-        }
+     environment {            
+        PATH = "/usr/bin/npm:/share/nodejs/npm/bin:${env.PATH}"
+    }
+        
     stages {
         stage('Build') {
             steps {
@@ -17,4 +18,3 @@ pipeline {
         }
      }
  }
-
